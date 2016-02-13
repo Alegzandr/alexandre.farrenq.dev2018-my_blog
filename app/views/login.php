@@ -17,6 +17,6 @@
 
 <?php include('footer.php') ?>
 
-<script src="./assets/js/jquery-2.2.0.min.js"></script>
+<script src="assets/js/jquery-2.2.0.min.js"></script>
 </body>
 </html>
