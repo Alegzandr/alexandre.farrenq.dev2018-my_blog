@@ -12,8 +12,8 @@
     <h3>S'identifier</h3>
     <br>
 
-    <input type="text" name="username" placeholder="Nom d'utilisateur" required><br>
-    <input type="password" name="password" placeholder="Mot de passe" required><br>
+    <input type="text" name="username" placeholder="Nom d'utilisateur" ><br>
+    <input type="password" name="password" placeholder="Mot de passe" ><br>
 
     <br>
     <input type="submit">
@@ -22,5 +22,6 @@
 <?php include('footer.php') ?>
 
 <script src="assets/js/jquery-2.2.0.min.js"></script>
+<script src="assets/js/login.js"></script>
 </body>
 </html>
