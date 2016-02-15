@@ -1,6 +1,6 @@
 <?php
 
-class ProfileController extends AbstractController
+class ProfileController extends BaseController
 {
     public function indexAction()
     {

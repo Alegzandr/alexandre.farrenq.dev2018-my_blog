@@ -1,10 +1,10 @@
 <?php
 
-class SigninController extends AbstractController
+class SigninController extends BaseController
 {
     public function indexAction()
     {
-        //include('../app/models/Signin.php');
+        require_once('../app/models/signin.php');
         return;
     }
 }

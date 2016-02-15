@@ -1,6 +1,6 @@
 <?php
 
-class AbstractController
+class BaseController
 {
     protected $pdo;
 

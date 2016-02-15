@@ -9,7 +9,8 @@
 <body>
 <?php include('header.php') ?>
 
-
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam, commodi dolores earum eum illum laboriosam
+    laudantium, minima minus necessitatibus nobis non ratione recusandae, sequi similique ullam ut vitae voluptatum.</p>
 
 <?php include('footer.php') ?>
 

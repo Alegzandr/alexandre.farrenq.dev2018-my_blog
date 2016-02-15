@@ -33,4 +33,3 @@ if (!method_exists($controller, $action)) {
 }
 $result = $controller->$action();
 echo $result;
-

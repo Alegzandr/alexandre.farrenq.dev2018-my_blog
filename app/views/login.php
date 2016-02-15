@@ -10,8 +10,12 @@
 
 <form action="signin" method="post" name="signin">
     <h3>S'identifier</h3>
+    <br>
+
     <input type="text" name="username" placeholder="Nom d'utilisateur" required><br>
     <input type="password" name="password" placeholder="Mot de passe" required><br>
+
+    <br>
     <input type="submit">
 </form>
 

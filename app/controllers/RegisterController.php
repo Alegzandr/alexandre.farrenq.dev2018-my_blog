@@ -1,6 +1,6 @@
 <?php
 
-class RegisterController extends AbstractController
+class RegisterController extends BaseController
 {
     public function indexAction()
     {
