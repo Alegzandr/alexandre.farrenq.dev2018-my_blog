@@ -52,7 +52,8 @@ class SignupModel
         last_name = :last_name,
         mail = :mail,
         password = :password,
-        timestamp = :password
+        timestamp = :timestamp,
+        permissions = "user"
         ');
         $q->bindParam(':username', $username);
         $q->bindParam(':first_name', $first_name);

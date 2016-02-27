@@ -12,9 +12,9 @@ class SignupController extends BaseController
         $valid = true;
         $errors = [];
 
-        $username = htmlentities($_POST['username']);
-        $first_name = htmlentities($_POST['first-name']);
-        $last_name = htmlentities($_POST['last-name']);
+        $username = ucwords(strtolower(htmlentities($_POST['username'])));
+        $first_name = ucwords(strtolower(htmlentities($_POST['first-name'])));
+        $last_name = ucwords(strtolower(htmlentities($_POST['last-name'])));
         $mail = htmlentities($_POST['mail']);
         $password = htmlentities($_POST['password']);
         $password2 = htmlentities($_POST['password2']);
