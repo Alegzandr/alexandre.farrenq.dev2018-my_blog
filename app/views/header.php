@@ -3,10 +3,21 @@
 
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/profile">Your profile</a></li>
+            <li><a href="/">Accueil</a></li>
+
+            <?php
+                if(!isset($_SESSION['auth'])) {
+                    echo('
+                        <li><a href="/register">S\'enregistrer</a></li>
+                        <li><a href="/login">Se connecter</a></li>
+                        ');
+                } else {
+                    echo('
+                        <li><a href="/profile">Mon profil</a></li>
+                        <li><a href="/logout">Se déconnecter</a></li>
+                        ');
+                }
+            ?>
         </ul>
     </nav>
 </header>

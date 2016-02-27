@@ -15,9 +15,8 @@ class AuthModel
 
         if(hash('sha256', $result['password']) === $password) {
             $_SESSION['auth'] = array($result);
-            setcookie('auth', $user_id, time() + 3600 * 24 * 3, '/', null, null, true);
         } else {
-            setcookie('auth', '', time() - 3600, '/', null, null, true);
+            CookieController::destroy();
         }
     }
 

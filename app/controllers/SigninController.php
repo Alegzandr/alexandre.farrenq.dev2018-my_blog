@@ -27,16 +27,14 @@ class SigninController extends BaseController
             $errors['password'] = '<span class="errors">Non saisi</span>';
             $valid = false;
         }
-
-        if (isset($_POST['remember'])) {
-            $user_id = $username . 'ce28' . hash('sha256', $password);
-            setcookie('auth', $user_id, time() + 3600 * 24 * 3, '/', null, null, true);
-        }
-
         $errors['valid'] = $valid;
 
         if ($valid) {
-            AuthController::authUser($this->pdo, $username, $password);
+            if (isset($_POST['remember'])) {
+                CookieController::create($this->pdo, $username, $password);
+            }
+
+            AuthModel::authUser($this->pdo, $username, $password);
         }
 
         echo(json_encode($errors));
