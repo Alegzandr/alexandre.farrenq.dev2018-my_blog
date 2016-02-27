@@ -1,6 +1,7 @@
 $(function () {
     $('form[name="signup"]').submit(function () {
         $('.errors').remove();
+        $('.registered').remove();
 
         var username = $(this).find(':text[name="username"]');
         var firstName = $(this).find(':text[name="first-name"]');
@@ -13,7 +14,12 @@ $(function () {
             $(this).serialize(),
             function (data) {
                 if (data.valid) {
-                    // If form ok
+                    if (data.create) {
+                        $('form[name="signup"]').after(data.create);
+                    }
+                    else {
+                        $('form[name="signup"]').after('<span class="registered">Vous avez bien été inscrit.<span>');
+                    }
                 }
                 else {
                     if (data.username) {

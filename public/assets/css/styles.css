@@ -91,8 +91,13 @@ a {
     color: #000;
 }
 
+nav ul li a {
+    color: #2c3438;
+}
+
 nav ul li a:hover {
     text-shadow: 0px 0px 5px rgba(150, 150, 150, 0.9);
+    color: #000;
 }
 
 h3 {
@@ -107,6 +112,16 @@ form {
     font-size: 0.7em;
     color: #a10202;
     margin-left: 15px;
+}
+
+.registered {
+    font-size: 0.7em;
+    color: #008300;
+    margin-left: 15px;
+}
+
+label {
+    font-size: 0.7em;
 }
 
 footer {

@@ -9,8 +9,13 @@
 <body>
 <?php include('header.php') ?>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam, commodi dolores earum eum illum laboriosam
-    laudantium, minima minus necessitatibus nobis non ratione recusandae, sequi similique ullam ut vitae voluptatum.</p>
+<section></section>
+
+<section class="articles">
+    <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci at cumque cupiditate dolore, eveniet
+        facere fugiat laborum tenetur voluptatem. Consequatur enim labore quas qui rem repellendus tempora unde vel!
+    </article>
+</section>
 
 <?php include('footer.php') ?>
 
