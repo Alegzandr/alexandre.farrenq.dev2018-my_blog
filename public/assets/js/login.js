@@ -9,7 +9,7 @@ $(function () {
             $(this).serialize(),
             function (data) {
                 if (data.valid) {
-                    // If form ok
+                    $('form[name="signin"]').after('<span class="registered">Vous êtes connecté.<span>');
                 }
                 else {
                     if (data.username) {

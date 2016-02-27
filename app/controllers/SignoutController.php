@@ -4,10 +4,9 @@ class SignoutController extends BaseController
 {
     public function indexAction()
     {
-        $_SESSION = array();
+        unset($_SESSION)
         session_destroy();
 
-        setcookie('login', '');
-        setcookie('hash', '');
+        setcookie('auth', '', time() - 3600, '/', null, null, true);
     }
 }

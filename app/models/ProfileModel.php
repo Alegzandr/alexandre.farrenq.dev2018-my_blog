@@ -2,7 +2,7 @@
 
 class ProfileModel
 {
-    public static function getTimestamp($username)
+    public static function getTimestamp($pdo, $username)
     {
         $q = $pdo->prepare('
             SELECT username, timestamp

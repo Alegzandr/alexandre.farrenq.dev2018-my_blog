@@ -15,9 +15,8 @@ class SigninController extends BaseController
         $username = ucwords(strtolower(htmlentities($_POST['username'])));
         $password = hash(
             'sha256',
-            strrev(ProfileModel::getTimestamp($username)) . htmlentities($_POST['password']) . '\Rand0msalT/'
+            strrev(ProfileModel::getTimestamp($this->pdo, $username)) . htmlentities($_POST['password']) . '\Rand0msalT/'
         );
-        $remember = htmlentities($_POST['remember']);
 
         if (!isset($username) || empty($username)) {
             $errors['username'] = '<span class="errors">Non saisi</span>';
@@ -29,7 +28,7 @@ class SigninController extends BaseController
             $valid = false;
         }
 
-        if (isset($remember)) {
+        if (isset($_POST['remember'])) {
             $user_id = $username . 'ce28' . hash('sha256', $password);
             setcookie('auth', $user_id, time() + 3600 * 24 * 3, '/', null, null, true);
         }
@@ -37,9 +36,9 @@ class SigninController extends BaseController
         $errors['valid'] = $valid;
 
         if ($valid) {
-            // Login user
-        } else {
-            echo(json_encode($errors));
+            AuthModel::authUser($this->pdo, $username, $password);
         }
+
+        echo(json_encode($errors));
     }
 }
