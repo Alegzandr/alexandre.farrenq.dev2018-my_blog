@@ -36,7 +36,7 @@ class SigninController extends BaseController
         $errors['valid'] = $valid;
 
         if ($valid) {
-            AuthModel::authUser($this->pdo, $username, $password);
+            AuthController::authUser($this->pdo, $username, $password);
         }
 
         echo(json_encode($errors));
