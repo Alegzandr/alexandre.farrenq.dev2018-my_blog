@@ -5,7 +5,7 @@ class AuthModel
     public static function authCookie($pdo, $username, $password)
     {
         $q = $pdo->prepare('
-            SELECT username, password
+            SELECT *
             FROM users
             WHERE username = :username
             ');
@@ -14,7 +14,7 @@ class AuthModel
         $result = $q->fetch();
 
         if(hash('sha256', $result['password']) === $password) {
-            $_SESSION['auth'] = array($result);
+            $_SESSION['auth'] = $result;
         } else {
             CookieController::destroy();
         }
@@ -23,7 +23,7 @@ class AuthModel
     public static function authUser($pdo, $username, $password)
     {
         $q = $pdo->prepare('
-            SELECT username, password
+            SELECT *
             FROM users
             WHERE username = :username
             ');
@@ -32,7 +32,7 @@ class AuthModel
         $result = $q->fetch();
 
         if($password === $result['password']) {
-            $_SESSION['auth'] = array($result);
+            $_SESSION['auth'] = $result;
         }
     }
 }
