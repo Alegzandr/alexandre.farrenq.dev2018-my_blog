@@ -4,7 +4,12 @@ class LoginController extends BaseController
 {
     public function indexAction()
     {
-        include('../app/views/login.php');
-        return;
+        if (!isset($_SESSION['auth'])) {
+            include('../app/views/login.php');
+            return;
+        } else {
+            header('Location: /');
+            return;
+        }
     }
 }

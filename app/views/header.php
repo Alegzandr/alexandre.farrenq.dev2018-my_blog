@@ -11,10 +11,18 @@
                         <li><a href="/login">Se connecter</a></li>
                         ');
             } else {
-                echo('
+                if ($_SESSION['auth']['permissions'] === 'superadmin') {
+                    echo('
+                        <li><a href="/profile">Mon profil</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/logout">Se déconnecter</a></li>
+                        ');
+                } else {
+                    echo('
                         <li><a href="/profile">Mon profil</a></li>
                         <li><a href="/logout">Se déconnecter</a></li>
                         ');
+                }
             }
             ?>
         </ul>
