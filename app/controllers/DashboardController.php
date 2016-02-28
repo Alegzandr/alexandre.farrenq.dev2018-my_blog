@@ -9,7 +9,7 @@ class DashboardController
             return;
         } else {
             header('Location: /');
-            return;
+            exit;
         }
     }
 }

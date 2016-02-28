@@ -6,10 +6,10 @@ class ProfileController extends BaseController
     {
         if (isset($_SESSION['auth'])) {
             header('Location: /profile/' . strtolower($_SESSION['auth']['username']));
-            return;
+            exit;
         } else {
             header('Location: /login');
-            return;
+            exit;
         }
     }
 

@@ -9,7 +9,7 @@ class LoginController extends BaseController
             return;
         } else {
             header('Location: /');
-            return;
+            exit;
         }
     }
 }

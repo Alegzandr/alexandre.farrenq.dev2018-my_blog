@@ -9,5 +9,6 @@ class LogoutController extends BaseController
 
         setcookie('auth', '', time() - 3600, '/', null, null, true);
         header('Location: /');
+        exit;
     }
 }
