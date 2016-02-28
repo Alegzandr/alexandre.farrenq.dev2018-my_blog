@@ -91,6 +91,78 @@ class SignupController extends BaseController
                 $hash,
                 $timestamp
             );
+
+            // Check your permissions on the controllers directory to allow this to workn chown for php or chmod 777
+            if (empty($errors['create'])) {
+                // Creates controller for this new profile
+                $file = '../app/controllers/ProfileController.php';
+                $current = substr(file_get_contents($file), 0, -1);
+                file_put_contents(
+                    $file,
+                    $current . '
+    public function ' . strtolower($username) . 'Action()
+    {
+        include(\'../app/views/' . strtolower($username) . '.php\');
+        return;
+    }
+}'
+                );
+
+                // Creates new view for this profile
+                $file = '../app/views/' . strtolower($username) . '.php';
+                file_put_contents(
+                    $file,
+'<?php $user = \'' . $username . '\'; ?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sup\'Teaching.fr | Profil de <?php echo($user); ?></title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<?php include(\'header.php\'); ?>
+
+<p>
+    Nom d\'utilisateur :
+    <?php echo(\'<span class="info">\' . $user . \'</span>\'); ?>
+</p>
+
+<p>
+    Prénom :
+    <?php echo(\'<span class="info">\' . ProfileModel::getFirstName($this->pdo, $user) . \'</span>\'); ?>
+</p>
+
+<p>
+    Nom :
+    <?php echo(\'<span class="info">\' . ProfileModel::getLastName($this->pdo, $user) . \'</span>\'); ?>
+</p>
+
+<p>
+    Adresse mail :
+    <?php echo(\'<span class="info">\' . ProfileModel::getMail($this->pdo, $user) . \'</span>\'); ?>
+</p>
+
+<p>
+    Date d\'inscription :
+    <?php echo(\'<span class="info">\' . date(\'d/m/Y\', ProfileModel::getTimestamp($this->pdo, $user)) . \'</span>\'); ?>
+</p>
+
+<p>
+    Groupe :
+    <?php echo(\'<span class="info">\' . ucwords(ProfileModel::getGroup($this->pdo, $user)) . \'</span>\'); ?>
+</p>
+
+<?php include(\'footer.php\'); ?>
+
+<script src="../assets/js/jquery-2.2.1.min.js"></script>
+</body>
+</html>'
+                );
+
+                chmod($file, 0777);
+            }
         }
 
         echo(json_encode($errors));

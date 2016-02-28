@@ -5,17 +5,17 @@
         <ul>
             <li><a href="/">Accueil</a></li>
             <?php
-                if(!isset($_SESSION['auth'])) {
-                    echo('
+            if (!isset($_SESSION['auth'])) {
+                echo('
                         <li><a href="/register">S\'enregistrer</a></li>
                         <li><a href="/login">Se connecter</a></li>
                         ');
-                } else {
-                    echo('
+            } else {
+                echo('
                         <li><a href="/profile">Mon profil</a></li>
                         <li><a href="/logout">Se déconnecter</a></li>
                         ');
-                }
+            }
             ?>
         </ul>
     </nav>

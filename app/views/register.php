@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('header.php'); ?>
 
 <form action="signup" method="post" name="signup">
     <h3>S'inscrire</h3>
@@ -23,7 +23,7 @@
     <input type="submit">
 </form>
 
-<?php include('footer.php') ?>
+<?php include('footer.php'); ?>
 
 <script src="assets/js/jquery-2.2.1.min.js"></script>
 <script src="assets/js/register.js"></script>

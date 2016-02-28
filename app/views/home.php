@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('header.php'); ?>
 
 <section></section>
 
@@ -17,7 +17,7 @@
     </article>
 </section>
 
-<?php include('footer.php') ?>
+<?php include('footer.php'); ?>
 
 <script src="assets/js/jquery-2.2.1.min.js"></script>
 </body>

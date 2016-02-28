@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<?php include('header.php') ?>
+<?php include('header.php'); ?>
 
 <form action="signin" method="post" name="signin">
     <h3>S'identifier</h3>
@@ -21,7 +21,7 @@
     <input type="submit">
 </form>
 
-<?php include('footer.php') ?>
+<?php include('footer.php'); ?>
 
 <script src="assets/js/jquery-2.2.1.min.js"></script>
 <script src="assets/js/login.js"></script>
