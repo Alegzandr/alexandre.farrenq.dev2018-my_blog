@@ -35,11 +35,11 @@
 
 <p>
     Groupe :
-    <?php echo('<span class="info">' . $_SESSION['auth']['permissions']) . '</span>' ?>
+    <?php echo('<span class="info">' . ucwords($_SESSION['auth']['permissions'])) . '</span>' ?>
 </p>
 
 <?php include('footer.php') ?>
 
-<script src="assets/js/jquery-2.2.0.min.js"></script>
+<script src="assets/js/jquery-2.2.1.min.js"></script>
 </body>
 </html>

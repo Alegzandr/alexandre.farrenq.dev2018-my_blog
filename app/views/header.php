@@ -4,7 +4,6 @@
     <nav>
         <ul>
             <li><a href="/">Accueil</a></li>
-
             <?php
                 if(!isset($_SESSION['auth'])) {
                     echo('
