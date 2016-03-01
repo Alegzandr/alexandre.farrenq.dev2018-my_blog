@@ -11,18 +11,20 @@
                         <li><a href="/login">Se connecter</a></li>
                         ');
             } else {
-                if ($_SESSION['auth']['permissions'] === 'superadmin') {
+                $group = $_SESSION['auth']['permissions'];
+
+                echo('<li><a href="/profile">Mon profil</a></li>');
+                if ($group === 'superadmin') {
                     echo('
-                        <li><a href="/profile">Mon profil</a></li>
                         <li><a href="/dashboard">Dashboard</a></li>
-                        <li><a href="/logout">Se déconnecter</a></li>
-                        ');
-                } else {
-                    echo('
-                        <li><a href="/profile">Mon profil</a></li>
-                        <li><a href="/logout">Se déconnecter</a></li>
                         ');
                 }
+                if ($group === 'blogger' || $group === 'superadmin') {
+                    echo('
+                        <li><a href="/article/new">Créer un article</a></li>
+                        ');
+                }
+                echo('<li><a href="/logout">Se déconnecter</a></li>');
             }
             ?>
         </ul>
