@@ -8,7 +8,7 @@
 <body>
 <?php include('header.php'); ?>
 
-<form action="signin" method="post" name="signin">
+<form action="/signin" method="post" name="signin">
     <h3>S'identifier</h3>
     <br>
 

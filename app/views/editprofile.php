@@ -8,35 +8,28 @@
 <body>
 <?php include('header.php') ?>
 
-<p>
-    Nom d'utilisateur :
-    <?php echo('<span class="info">' . $_SESSION['auth']['username']) . '</span>' ?>
-</p>
+<form name="edit-profile" action="/editprofile" method="post">
+    <label for="username">Nom d'utilisateur</label><br>
+    <input type="text" name="username" id="username" value="<?php echo($_SESSION['auth']['username']); ?>"><br>
 
-<p>
-    Prénom :
-    <?php echo('<span class="info">' . $_SESSION['auth']['first_name']) . '</span>' ?>
-</p>
+    <label for="first-name">Prénom</label><br>
+    <input type="text" name="first-name" id="first-name" value="<?php echo($_SESSION['auth']['first_name']); ?>"><br>
 
-<p>
-    Nom :
-    <?php echo('<span class="info">' . $_SESSION['auth']['last_name']) . '</span>' ?>
-</p>
+    <label for="last-name">Nom de famille</label><br>
+    <input type="text" name="last-name" id="last-name" value="<?php echo($_SESSION['auth']['last_name']); ?>"><br>
 
-<p>
-    Adresse mail :
-    <?php echo('<span class="info">' . $_SESSION['auth']['mail']) . '</span>' ?>
-</p>
+    <label for="mail">Adresse mail</label><br>
+    <input type="email" name="mail" id="mail" value="<?php echo($_SESSION['auth']['mail']); ?>"><br>
 
-<p>
-    Date d'inscription :
-    <?php echo('<span class="info">' . date('d/m/Y', $_SESSION['auth']['timestamp'])) . '</span>' ?>
-</p>
+    <label for="password">Mot de passe</label><br>
+    <input type="password" name="password" id="password" placeholder="********"><br>
 
-<p>
-    Groupe :
-    <?php echo('<span class="info">' . ucwords($_SESSION['auth']['permissions'])) . '</span>' ?>
-</p>
+    <label for="password2">Confirmation</label><br>
+    <input type="password" name="password2" id="password2" placeholder="********"><br>
+
+    <br>
+    <input type="submit">
+</form>
 
 <?php include('footer.php') ?>
 

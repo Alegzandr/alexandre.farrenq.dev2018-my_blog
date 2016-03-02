@@ -8,7 +8,7 @@
 <body>
 <?php include('header.php'); ?>
 
-<form action="signup" method="post" name="signup">
+<form action="/signup" method="post" name="signup">
     <h3>S'inscrire</h3>
     <br>
 

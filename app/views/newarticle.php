@@ -8,7 +8,7 @@
 <body>
 <?php include('header.php'); ?>
 
-<form action="newarticle" method="post" name="newarticle">
+<form action="/newarticle" method="post" name="newarticle">
     <h3>Créer un article</h3>
     <br>
 
