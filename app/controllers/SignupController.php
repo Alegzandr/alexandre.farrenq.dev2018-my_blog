@@ -119,6 +119,7 @@ class SignupController extends BaseController
 <head>
     <meta charset="UTF-8">
     <title>Sup\'Teaching.fr | Profil de <?php echo($user); ?></title>
+    <link rel="icon" href="../assets/img/favicon.png">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>

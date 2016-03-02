@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sup'Teaching.fr | Créer un article</title>
+    <link rel="icon" href="../assets/img/favicon.png">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
