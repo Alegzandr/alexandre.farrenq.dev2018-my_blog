@@ -13,6 +13,17 @@ class ProfileController extends BaseController
         }
     }
 
+    public function editAction()
+    {
+        if (isset($_SESSION['auth'])) {
+            include('../app/views/editprofile.php');
+            return;
+        } else {
+            header('Location: /login');
+            exit;
+        }
+    }
+
     public function alegzandrAction()
     {
         include('../app/views/alegzandr.php');

@@ -124,6 +124,12 @@ class SignupController extends BaseController
 <body>
 <?php include(\'header.php\'); ?>
 
+<?php
+    if ($_SESSION[\'auth\'][\'username\'] === $user) {
+        echo(\'<a href="/profile/edit" id="editp-btn">Éditer mon profil</a>\');
+    }
+?>
+
 <p>
     Nom d\'utilisateur :
     <?php echo(\'<span class="info">\' . $user . \'</span>\'); ?>

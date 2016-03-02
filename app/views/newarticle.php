@@ -12,7 +12,8 @@
     <h3>Créer un article</h3>
     <br>
 
-    <!-- Fields -->
+    <input type="text" name="title" placeholder="Titre de l'article"><br>
+    <textarea name="content" cols="150" rows="30" placeholder="Contenu de l'article"></textarea>
 
     <br>
     <input type="submit">
