@@ -4,11 +4,19 @@ class ProfileController extends BaseController
 {
     public function indexAction()
     {
+        $url_composants = explode('/', $_SERVER['REQUEST_URI'], 4);
+
         if (isset($_SESSION['auth'])) {
             header('Location: /profile/' . strtolower($_SESSION['auth']['username']));
             exit;
-        } else {
-            header('Location: /login');
+        } elseif (
+            !empty($url_composants[2]) && $url_composants[2] != 'edit'
+            || !empty($url_composants[2]) && $url_composants[2] != 'new'
+        ) {
+            include('../app/views/profile.php');
+            return;
+        } elseif ($url_composants[2] == '') {
+            header('Location: /');
             exit;
         }
     }
@@ -22,17 +30,5 @@ class ProfileController extends BaseController
             header('Location: /login');
             exit;
         }
-    }
-
-    public function alegzandrAction()
-    {
-        include('../app/views/alegzandr.php');
-        return;
-    }
-
-    public function tretiakoffAction()
-    {
-        include('../app/views/tretiakoff.php');
-        return;
     }
 }

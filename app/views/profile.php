@@ -1,5 +1,7 @@
-<?php $user = 'Alegzandr'; ?>
-
+<?php
+$url_composants = explode('/', $_SERVER['REQUEST_URI'], 4);
+$user = ucwords(strtolower($url_composants[2]));
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -12,9 +14,9 @@
 <?php include('header.php'); ?>
 
 <?php
-    if ($_SESSION['auth']['username'] === $user) {
-        echo('<a href="/profile/edit" id="editp-btn">Éditer mon profil</a>');
-    }
+if (isset($_SESSION['auth']) && $_SESSION['auth']['username'] === $user) {
+    echo('<a href="/profile/edit" id="editp-btn">Éditer mon profil</a>');
+}
 ?>
 
 <p>
@@ -52,3 +54,4 @@
 <script src="../assets/js/jquery-2.2.1.min.js"></script>
 </body>
 </html>
+
