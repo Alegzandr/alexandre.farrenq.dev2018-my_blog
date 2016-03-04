@@ -4,16 +4,18 @@ class ProfileController extends BaseController
 {
     public function indexAction()
     {
-        $user = ucwords(strtolower(explode('/', $_SERVER['REQUEST_URI'], 4)[2]));
 
-        if (isset($_SESSION['auth'])) {
-            header('Location: /profile/' . strtolower($_SESSION['auth']['username']));
-            exit;
-        } elseif (ProfileModel::exists($this->pdo, $user) == true) {
+        if(isset($_SESSION['auth']) && empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
+            $user = $_SESSION['auth']['username'];
+        } else {
+            $user = ucwords(strtolower(explode('/', $_SERVER['REQUEST_URI'], 4)[2]));
+        }
+
+        if (ProfileModel::exists($this->pdo, $user)) {
             include('../app/views/profile.php');
             return;
         } else {
-            header('Location: /');
+            header('Location: /404');
             exit;
         }
     }

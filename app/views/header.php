@@ -13,7 +13,9 @@
             } else {
                 $group = $_SESSION['auth']['permissions'];
 
-                echo('<li><a href="/profile">Mon profil</a></li>');
+                echo('<li><a href="/profile/'
+                    . strtolower($_SESSION['auth']['username'])
+                    . '">Mon profil</a></li>');
                 if ($group === 'superadmin') {
                     echo('
                         <li><a href="/dashboard">Dashboard</a></li>

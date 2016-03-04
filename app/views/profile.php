@@ -1,6 +1,9 @@
 <?php
-$url_composants = explode('/', $_SERVER['REQUEST_URI'], 4);
-$user = ucwords(strtolower($url_composants[2]));
+if (!empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
+    $user = ucwords(strtolower(explode('/', $_SERVER['REQUEST_URI'], 4)[2]));
+} else {
+    $user = $_SESSION['auth']['username'];
+}
 ?>
 <!doctype html>
 <html lang="fr">

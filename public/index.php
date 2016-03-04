@@ -14,10 +14,7 @@ if (isset($url_composants[1])) {
     $controller_name = 'index';
 }
 if (isset($url_composants[2])) {
-    if (
-        $url_composants[1] == 'profile' && $url_composants[2] != 'edit'
-        || $url_composants[1] == 'profile' && $url_composants[2] != 'new'
-    ) {
+    if ($url_composants[1] == 'profile' && $url_composants[2] != 'edit') {
         $action_name = 'index';
     } else {
         $action_name = $url_composants[2];
