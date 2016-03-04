@@ -2,6 +2,29 @@
 
 class ProfileModel
 {
+    public static function exists($pdo, $username)
+    {
+        if ($username == '') {
+            return false;
+        }
+
+        $q = $pdo->prepare('
+            SELECT username
+            FROM users
+            WHERE username = :username
+            ');
+        $q->bindParam(':username', $username);
+        $q->execute();
+
+        $result = $q->fetch();
+
+        if ($result['username'] == $username) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static function getFirstName($pdo, $username)
     {
         $q = $pdo->prepare('

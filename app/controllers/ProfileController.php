@@ -4,18 +4,15 @@ class ProfileController extends BaseController
 {
     public function indexAction()
     {
-        $url_composants = explode('/', $_SERVER['REQUEST_URI'], 4);
+        $user = ucwords(strtolower(explode('/', $_SERVER['REQUEST_URI'], 4)[2]));
 
         if (isset($_SESSION['auth'])) {
             header('Location: /profile/' . strtolower($_SESSION['auth']['username']));
             exit;
-        } elseif (
-            !empty($url_composants[2]) && $url_composants[2] != 'edit'
-            || !empty($url_composants[2]) && $url_composants[2] != 'new'
-        ) {
+        } elseif (ProfileModel::exists($this->pdo, $user) == true) {
             include('../app/views/profile.php');
             return;
-        } elseif ($url_composants[2] == '') {
+        } else {
             header('Location: /');
             exit;
         }
