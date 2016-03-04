@@ -26,7 +26,6 @@
 
 <?php include('footer.php'); ?>
 
-<script src="assets/js/jquery-2.2.1.min.js"></script>
 <script src="assets/js/register.js"></script>
 </body>
 </html>

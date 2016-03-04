@@ -53,8 +53,6 @@ if (isset($_SESSION['auth']) && $_SESSION['auth']['username'] === $user) {
 </p>
 
 <?php include('footer.php'); ?>
-
-<script src="../assets/js/jquery-2.2.1.min.js"></script>
 </body>
 </html>
 

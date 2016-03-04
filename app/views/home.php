@@ -19,7 +19,5 @@
 </section>
 
 <?php include('footer.php'); ?>
-
-<script src="assets/js/jquery-2.2.1.min.js"></script>
 </body>
 </html>

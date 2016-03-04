@@ -1,4 +1,4 @@
-<header>
+<header id="top">
     <h1><a href="/">Sup'Teaching.fr</a></h1>
 
     <nav>
