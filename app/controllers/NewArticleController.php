@@ -12,8 +12,8 @@ class NewArticleController extends BaseController
         $valid = true;
         $errors = [];
 
-        $title = ucfirst(strtolower(htmlentities($_POST['title'])));
-        $content = htmlentities($_POST['content']);
+        $title = trim(ucfirst(strtolower(htmlentities($_POST['title']))));
+        $content = trim(htmlentities($_POST['content']));
 
         if (!isset($title) || empty($title)) {
             $errors['title'] = '<span class="errors">Non saisi</span>';

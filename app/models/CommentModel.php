@@ -2,7 +2,7 @@
 
 class CommentModel
 {
-    public static function create ($pdo, $id, $username, $comment, $timestamp)
+    public static function create($pdo, $id, $username, $comment, $timestamp)
     {
         $q = $pdo->prepare('
             INSERT INTO comments
@@ -20,7 +20,7 @@ class CommentModel
         $q->execute();
     }
 
-    public static function edit ($pdo, $id, $content, $timestamp)
+    public static function edit($pdo, $id, $content, $timestamp)
     {
         $q = $pdo->prepare('
             UPDATE comments
@@ -40,11 +40,33 @@ class CommentModel
         $q->execute();
 
         $comments = [];
-        while ($results = $q->fetch())
-        {
+        while ($results = $q->fetch()) {
             array_push($comments, $results);
         }
 
         return $comments;
+    }
+
+    public static function noComment($pdo, $article_id)
+    {
+        if ($article_id == '') {
+            return true;
+        }
+
+        $q = $pdo->prepare('
+            SELECT article_id
+            FROM comments
+            WHERE article_id = :article_id
+            ');
+        $q->bindParam(':article_id', $article_id);
+        $q->execute();
+
+        $result = $q->fetch();
+
+        if ($result['article_id'] == $article_id) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

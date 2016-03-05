@@ -12,7 +12,7 @@ class SigninController extends BaseController
         $valid = true;
         $errors = [];
 
-        $username = ucwords(strtolower(htmlentities($_POST['username'])));
+        $username = trim(ucwords(strtolower(htmlentities($_POST['username']))));
         $password = hash(
             'sha256',
             strrev(ProfileModel::getTimestamp($this->pdo, $username)) . htmlentities($_POST['password']) . '\Rand0msalT/'

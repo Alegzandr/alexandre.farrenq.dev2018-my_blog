@@ -12,12 +12,12 @@ class SignupController extends BaseController
         $valid = true;
         $errors = [];
 
-        $username = ucwords(strtolower(htmlentities($_POST['username'])));
-        $first_name = ucwords(strtolower(htmlentities($_POST['first-name'])));
-        $last_name = ucwords(strtolower(htmlentities($_POST['last-name'])));
-        $mail = htmlentities(strtolower($_POST['mail']));
-        $password = htmlentities($_POST['password']);
-        $password2 = htmlentities($_POST['password2']);
+        $username = trim(ucwords(strtolower(htmlentities($_POST['username']))));
+        $first_name = trim(ucwords(strtolower(htmlentities($_POST['first-name']))));
+        $last_name = trim(ucwords(strtolower(htmlentities($_POST['last-name']))));
+        $mail = trim(htmlentities(strtolower($_POST['mail'])));
+        $password = trim(htmlentities($_POST['password']));
+        $password2 = trim(htmlentities($_POST['password2']));
 
         if (!isset($username) || empty($username)) {
             $errors['username'] = '<span class="errors">Non saisi</span>';

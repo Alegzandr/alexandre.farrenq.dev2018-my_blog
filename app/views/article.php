@@ -30,6 +30,10 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
         if ($edit_date !== $date) {
             echo('<br><p class="edit">Modifié le ' . $edit_author . ' par ' . $edit_date . '.</p>');
         }
+
+        if ($author === $_SESSION['auth']['username']) {
+            echo('<a href="/edit/'. $id .'">Éditer l\'article</a>');
+        }
         ?>
     </section>
 
@@ -50,7 +54,13 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
         </form>
 
         <div class="show-comments">
-            <button id="show-more">En afficher plus</button>
+            <?php
+            if (CommentModel::noComment($this->pdo, $id)) {
+                echo('<p>Aucun commentaire.</p>');
+            } else {
+                echo('<button id="show-more">En afficher plus</button>');
+            }
+            ?>
         </div>
     </section>
 </main>

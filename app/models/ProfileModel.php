@@ -94,4 +94,22 @@ class ProfileModel
 
         return $result['permissions'];
     }
+
+    public static function showLastUsers($pdo)
+    {
+        $q = $pdo->prepare('
+            SELECT *
+            FROM users
+            ORDER BY id DESC
+            ');
+        $q->execute();
+
+        $users = [];
+        while ($results = $q->fetch())
+        {
+            array_push($users, $results);
+        }
+
+        return $users;
+    }
 }

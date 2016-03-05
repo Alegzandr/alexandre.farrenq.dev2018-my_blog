@@ -14,7 +14,7 @@ class CommentController extends BaseController
 
         $id = htmlentities($_POST['article']);
         $user = $_SESSION['auth']['username'];
-        $comment = htmlentities($_POST['comment']);
+        $comment = trim(htmlentities($_POST['comment']));
         $timestamp = time();
 
         if(!ArticleModel::exists($this->pdo, $id)) {
