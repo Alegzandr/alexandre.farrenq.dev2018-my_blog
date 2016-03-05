@@ -9,6 +9,6 @@ class LoadController extends BaseController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET');
         
-        echo(json_encode(ArticleModel::ShowLastArticles($this->pdo)));
+        echo(json_encode(ArticleModel::showLastArticles($this->pdo)));
     }
 }

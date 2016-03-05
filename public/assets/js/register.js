@@ -1,7 +1,7 @@
 $(function () {
     $('form[name="signup"]').submit(function () {
         $('.errors').remove();
-        $('.created').remove();
+        $('.success').remove();
 
         var username = $(this).find(':text[name="username"]');
         var firstName = $(this).find(':text[name="first-name"]');
@@ -18,7 +18,7 @@ $(function () {
                         $('form[name="signup"]').after(data.create);
                     }
                     else {
-                        $('form[name="signup"]').after('<span class="created">Vous avez bien été inscrit.<span>');
+                        $('form[name="signup"]').after('<span class="success">Vous avez bien été inscrit.<span>');
                     }
                 }
                 else {

@@ -11,7 +11,7 @@
 <?php include('header.php'); ?>
 
 <main role="main">
-    <button id="show-more">Afficher plus</button>
+    <button id="show-more">En afficher plus</button>
 </main>
 
 <?php include('footer.php'); ?>

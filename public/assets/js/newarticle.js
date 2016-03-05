@@ -1,7 +1,7 @@
 $(function () {
     $('form[name="new-article"]').submit(function () {
         $('.errors').remove();
-        $('.created').remove();
+        $('.success').remove();
 
         var title = $(this).find(':text[name="title"]');
         var content = $(this).find('textarea[name="content"]');
@@ -15,7 +15,7 @@ $(function () {
                     }
                     else {
                         $('form[name="new-article"]').after(
-                            '<span class="created">Votre article a bien été créé !</span>'
+                            '<span class="success">Votre article a bien été créé !</span>'
                         );
                     }
                 }

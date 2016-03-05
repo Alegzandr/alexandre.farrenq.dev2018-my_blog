@@ -55,7 +55,7 @@ class ArticleModel
         $q->execute();
         $result = $q->fetch();
 
-        return date('d/m/Y', $result['timestamp']);
+        return date('d/m/Y h:i', $result['timestamp']);
     }
 
     public static function getAuthor($pdo, $id)
@@ -70,6 +70,34 @@ class ArticleModel
         $result = $q->fetch();
 
         return $result['author'];
+    }
+
+    public static function getEditAuthor($pdo, $id)
+    {
+        $q = $pdo->prepare('
+            SELECT last_edit_author
+            FROM articles
+            WHERE id = :id
+            ');
+        $q->bindParam(':id', $id);
+        $q->execute();
+        $result = $q->fetch();
+
+        return $result['last_edit_author'];
+    }
+
+    public static function getEditDate($pdo, $id)
+    {
+        $q = $pdo->prepare('
+            SELECT last_edit_date
+            FROM articles
+            WHERE id = :id
+            ');
+        $q->bindParam(':id', $id);
+        $q->execute();
+        $result = $q->fetch();
+
+        return date('d/m/Y h:i', $result['last_edit_date']);
     }
 
     public static function create($pdo, $title, $content, $author)
@@ -108,8 +136,6 @@ class ArticleModel
         $q->bindParam(':content', $content);
         $q->bindParam(':timestamp', $timestamp);
         $q->execute();
-
-        $q->closeCursor();
     }
 
     public static function edit($pdo, $id, $title, $content, $author)
@@ -130,7 +156,7 @@ class ArticleModel
         $q->execute();
     }
 
-    public static function ShowLastArticles($pdo)
+    public static function showLastArticles($pdo)
     {
         $q = $pdo->prepare('
             SELECT *

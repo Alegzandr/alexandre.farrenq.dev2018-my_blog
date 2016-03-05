@@ -1,4 +1,20 @@
 $(function () {
+    function formatDate(value) {
+        if (value) {
+            Number.prototype.padLeft = function (base, chr) {
+                var len = (String(base || 10).length - String(this).length) + 1;
+                return len > 0 ? new Array(len).join(chr || '0') + this : this;
+            }
+            var d = new Date(value),
+                dformat = [d.getDate().padLeft(),
+                        (d.getMonth() + 1).padLeft(),
+                        d.getFullYear()].join('/') +
+                    ' ' +
+                    [d.getHours().padLeft(), d.getMinutes().padLeft()].join(':');
+            return dformat;
+        }
+    }
+
     $.ajax({
         url: '/load',
         type: 'get',
@@ -15,7 +31,9 @@ $(function () {
                         + data[i].author.toLowerCase()
                         + '">'
                         + data[i].author
-                        + '</a></h4><p class="text">'
+                        + '</a> le '
+                        + formatDate(data[i].timestamp * 1000)
+                        + '</h4><p class="text">'
                         + data[i].content
                         + '</p></article>'
                     );
@@ -32,19 +50,21 @@ $(function () {
             success: function (data) {
                 if (data.length >= $('article').length) {
                     var articleLength = $('article').length;
-                    for (var j = articleLength; j < articleLength + 11; j++) {
-                        if (data[j]) {
+                    for (var i = articleLength; i < articleLength + 11; i++) {
+                        if (data[i]) {
                             $('article').last().after(
                                 '<article><h3><a href="/article/'
-                                + data[j].id
+                                + data[i].id
                                 + '">'
-                                + data[j].title
+                                + data[i].title
                                 + '</a></h3><h4><a href="/profile/'
-                                + data[j].author
+                                + data[i].author.toLowerCase()
                                 + '">'
-                                + data[j].author
-                                + '</a></h4><p class="text">'
-                                + data[j].content
+                                + data[i].author
+                                + '</a> le '
+                                + formatDate(data[i].timestamp * 1000)
+                                + '</h4><p class="text">'
+                                + data[i].content
                                 + '</p></article>'
                             );
                         }
