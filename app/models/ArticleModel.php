@@ -16,6 +16,20 @@ class ArticleModel
         return $result['title'];
     }
 
+    public static function getID($pdo, $title)
+    {
+        $q = $pdo->prepare('
+            SELECT id
+            FROM articles
+            WHERE title = :title
+            ');
+        $q->bindParam(':title', $title);
+        $q->execute();
+        $result = $q->fetch();
+
+        return $result['id'];
+    }
+
     public static function getContent($pdo, $id)
     {
         $q = $pdo->prepare('

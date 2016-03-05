@@ -21,9 +21,9 @@
                         <li><a href="/dashboard">Dashboard</a></li>
                         ');
                 }
-                if ($group === 'blogger' || $group === 'superadmin') {
+                if ($group != 'user') {
                     echo('
-                        <li><a href="/article/new">Créer un article</a></li>
+                        <li><a href="/new">Créer un article</a></li>
                         ');
                 }
                 echo('<li><a href="/logout">Se déconnecter</a></li>');

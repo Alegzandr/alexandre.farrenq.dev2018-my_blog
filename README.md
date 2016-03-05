@@ -2,5 +2,9 @@
 My Blog Project - SUP'Internet
 
 In order to make this project to work on your computer,
-make sure that you've chown or chmod 777 (it uses file_put_contents)
-the folder and that you have a vHost to the public folder.
+just make sure that you have a vHost to the public folder.
+Also, you will have to import the .sql file in the root.
+The database is called supteaching.
+That's all :)
+
+-Alegzandr

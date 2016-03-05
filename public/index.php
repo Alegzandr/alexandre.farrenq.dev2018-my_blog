@@ -18,6 +18,8 @@ if (isset($url_composants[2])) {
         $action_name = 'index';
     } elseif ($url_composants[1] == 'edit') {
         $action_name = 'index';
+    } elseif ($url_composants[1] == 'article') {
+        $action_name = 'index';
     } else {
         $action_name = $url_composants[2];
     }

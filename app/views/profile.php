@@ -16,41 +16,38 @@ if (!empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
 <body>
 <?php include('header.php'); ?>
 
-<?php
-if (isset($_SESSION['auth']) && $_SESSION['auth']['username'] === $user) {
-    echo('<a href="/profile/edit" id="editp-btn">Éditer mon profil</a>');
-}
-?>
+<main role="main">
+    <?php
+    if (isset($_SESSION['auth']) && $_SESSION['auth']['username'] === $user) {
+        echo('<a href="/profile/edit" id="editp-btn">Éditer mon profil</a>');
+    }
+    ?>
 
-<p>
-    Nom d'utilisateur :
-    <?php echo('<span class="info">' . $user . '</span>'); ?>
-</p>
+    <p>
+        Nom d'utilisateur :
+        <?php echo('<span class="info">' . $user . '</span>'); ?>
+    </p>
 
-<p>
-    Prénom :
-    <?php echo('<span class="info">' . ProfileModel::getFirstName($this->pdo, $user) . '</span>'); ?>
-</p>
+    <p>
+        Prénom :
+        <?php echo('<span class="info">' . ProfileModel::getFirstName($this->pdo, $user) . '</span>'); ?>
+    </p>
 
-<p>
-    Nom :
-    <?php echo('<span class="info">' . ProfileModel::getLastName($this->pdo, $user) . '</span>'); ?>
-</p>
+    <p>
+        Nom :
+        <?php echo('<span class="info">' . ProfileModel::getLastName($this->pdo, $user) . '</span>'); ?>
+    </p>
 
-<p>
-    Adresse mail :
-    <?php echo('<span class="info">' . ProfileModel::getMail($this->pdo, $user) . '</span>'); ?>
-</p>
+    <p>
+        Date d'inscription :
+        <?php echo('<span class="info">' . date('d/m/Y', ProfileModel::getTimestamp($this->pdo, $user)) . '</span>'); ?>
+    </p>
 
-<p>
-    Date d'inscription :
-    <?php echo('<span class="info">' . date('d/m/Y', ProfileModel::getTimestamp($this->pdo, $user)) . '</span>'); ?>
-</p>
-
-<p>
-    Groupe :
-    <?php echo('<span class="info">' . ucwords(ProfileModel::getGroup($this->pdo, $user)) . '</span>'); ?>
-</p>
+    <p>
+        Groupe :
+        <?php echo('<span class="info">' . ucwords(ProfileModel::getGroup($this->pdo, $user)) . '</span>'); ?>
+    </p>
+</main>
 
 <?php include('footer.php'); ?>
 </body>

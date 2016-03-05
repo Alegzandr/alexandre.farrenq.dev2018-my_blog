@@ -7,11 +7,15 @@ $(function () {
             for (var i = 9; i >= 0; i--) {
                 if (data[i]) {
                     $('main').prepend(
-                        '<article><h3>'
+                        '<article><h3><a href="/article/'
+                        + data[i].id
+                        + '">'
                         + data[i].title
-                        + '</h3><h4>'
+                        + '</a></h3><h4><a href="/profile/'
+                        + data[i].author.toLowerCase()
+                        + '">'
                         + data[i].author
-                        +'</h4><p class="text">'
+                        + '</a></h4><p class="text">'
                         + data[i].content
                         + '</p></article>'
                     );
@@ -31,11 +35,15 @@ $(function () {
                     for (var j = articleLength; j < articleLength + 11; j++) {
                         if (data[j]) {
                             $('article').last().after(
-                                '<article><h3>'
+                                '<article><h3><a href="/article/'
+                                + data[j].id
+                                + '">'
                                 + data[j].title
-                                + '</h3><h4>'
+                                + '</a></h3><h4><a href="/profile/'
                                 + data[j].author
-                                +'</h4><p class="text">'
+                                + '">'
+                                + data[j].author
+                                + '</a></h4><p class="text">'
                                 + data[j].content
                                 + '</p></article>'
                             );

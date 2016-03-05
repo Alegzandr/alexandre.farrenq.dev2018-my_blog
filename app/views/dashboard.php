@@ -10,7 +10,16 @@
 <body>
 <?php include('header.php'); ?>
 
-<h3>Dashboard</h3>
+<main role="main">
+    <h3>Dashboard</h3>
+    <section></section>
+
+    <h4>Utilisateurs</h4>
+    <section></section>
+
+    <h4>Articles</h4>
+    <section></section>
+</main>
 
 <?php include('footer.php'); ?>
 </body>

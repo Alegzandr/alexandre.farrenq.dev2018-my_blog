@@ -15,6 +15,6 @@
 </main>
 
 <?php include('footer.php'); ?>
-<script src="assets/js/loadmore.js"></script>
+<script src="assets/js/loadarticles.js"></script>
 </body>
 </html>

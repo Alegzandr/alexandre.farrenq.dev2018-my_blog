@@ -1,21 +1,19 @@
 <?php
 
-class ArticleController
+class ArticleController extends BaseController
 {
     public function indexAction()
     {
-        header('Location: /');
-        exit;
-    }
-
-    public function newAction()
-    {
-        if (isset($_SESSION['auth']) && $_SESSION['auth']['permissions'] != 'user') {
-            include('../app/views/newarticle.php');
-            return;
-        } else {
-            header('Location: /');
+        if (empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
+            header('Location : /');
             exit;
+        } else {
+            $article_id = explode('/', $_SERVER['REQUEST_URI'], 4)[2];
+        }
+
+        if (ArticleModel::exists($this->pdo, $article_id)) {
+            include('../app/views/article.php');
+            return;
         }
     }
 }
