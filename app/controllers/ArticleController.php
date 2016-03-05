@@ -10,7 +10,12 @@ class ArticleController
 
     public function newAction()
     {
-        include('../app/views/newarticle.php');
-        return;
+        if (isset($_SESSION['auth']) && $_SESSION['auth']['permissions'] != 'user') {
+            include('../app/views/newarticle.php');
+            return;
+        } else {
+            header('Location: /');
+            exit;
+        }
     }
 }

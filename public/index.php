@@ -16,6 +16,8 @@ if (isset($url_composants[1])) {
 if (isset($url_composants[2])) {
     if ($url_composants[1] == 'profile' && $url_composants[2] != 'edit') {
         $action_name = 'index';
+    } elseif ($url_composants[1] == 'edit') {
+        $action_name = 'index';
     } else {
         $action_name = $url_composants[2];
     }

@@ -9,7 +9,7 @@
 <body>
 <?php include('header.php'); ?>
 
-<form action="/newarticle" method="post" name="newarticle">
+<form name="new-article" action="/newarticle" method="post">
     <h3>Créer un article</h3>
     <br>
 
@@ -21,5 +21,6 @@
 </form>
 
 <?php include('footer.php'); ?>
+<script src="../assets/js/newarticle.js"></script>
 </body>
 </html>

@@ -10,14 +10,11 @@
 <body>
 <?php include('header.php'); ?>
 
-<section></section>
-
-<section class="articles">
-    <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci at cumque cupiditate dolore, eveniet
-        facere fugiat laborum tenetur voluptatem. Consequatur enim labore quas qui rem repellendus tempora unde vel!
-    </article>
-</section>
+<main role="main">
+    <button id="show-more">Afficher plus</button>
+</main>
 
 <?php include('footer.php'); ?>
+<script src="assets/js/loadmore.js"></script>
 </body>
 </html>

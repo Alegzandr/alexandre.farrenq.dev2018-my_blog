@@ -33,5 +33,6 @@
 </form>
 
 <?php include('footer.php') ?>
+<script src="../assets/js/editprofile.js"></script>
 </body>
 </html>

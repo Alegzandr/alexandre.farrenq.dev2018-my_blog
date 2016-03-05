@@ -44,6 +44,8 @@ class SignupModel
             return '<span class="errors">Un compte utilisé déjà cet email.</span>';
         }
 
+        $q->closeCursor();
+
         // If it doesn't already exists, add to database
         $q = $pdo->prepare('
         INSERT INTO users
