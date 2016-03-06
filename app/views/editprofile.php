@@ -5,6 +5,7 @@
     <title>Sup'Teaching.fr | Éditer mon profil</title>
     <link rel="icon" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="/assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/jquery.sidr.dark.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>

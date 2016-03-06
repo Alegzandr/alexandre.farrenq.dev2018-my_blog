@@ -15,6 +15,7 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
     <title>Sup'Teaching.fr | <?php echo($title); ?></title>
     <link rel="icon" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="/assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/jquery.sidr.dark.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
