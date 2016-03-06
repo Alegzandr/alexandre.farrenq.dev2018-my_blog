@@ -1,13 +1,52 @@
 /* Mobile */
 html {
     font-size: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: sans-serif;
     background-color: #ededed;
     padding: 95px 15px;
     line-height: 1.5;
+}
+
+main {
+    padding-bottom: 40px;
+}
+
+.splash {
+    width: calc(100% - 40px);
+    height: 75vh;
+    background: url(../img/bg.jpg) no-repeat center fixed;
+    background-size: cover;
+    padding: 140px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #c3c3c3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.splash h2 {
+    font-size: .8em;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 0px 5px #000;
 }
 
 .not-mobile {
@@ -24,6 +63,7 @@ i.fa {
     top: 25px;
     right: 25px;
     font-size: 2em;
+    color: #b5b5b5;
 }
 
 .confirm {
@@ -34,26 +74,37 @@ header {
     width: 100%;
     height: 80px;
     line-height: 80px;
-    background-color: #7484a3;
+    background-color: rgb(56, 56, 56);
+    opacity: .9;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     font-size: 0.9rem;
+    -moz-box-shadow: 0px 1px 3px 0px #383838;
+    -webkit-box-shadow: 0px 1px 3px 0px #383838;
+    -o-box-shadow: 0px 1px 3px 0px #383838;
+    box-shadow: 0px 1px 3px 0px #383838;
 }
 
 header h1 {
     display: inline-block;
     font-size: 1.5em;
     font-weight: 700;
-    margin-left: 15px;
-    color: #2c3438;
-    text-shadow: 0px 0px 5px rgba(150, 150, 150, 0.9);
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    text-shadow: 0px 0px 5px #000;
+}
+
+header h1 a {
+    color: #7a87aa;
 }
 
 nav {
     position: absolute;
-    right: 15px;
-    top: 0px;
+    top: -15px;
+    right: 30px;
 }
 
 nav ul li {
@@ -71,7 +122,7 @@ a:hover {
 }
 
 nav ul li a {
-    color: #2c3438;
+    color: #7a87aa;
 }
 
 nav ul li a:hover {
@@ -89,6 +140,32 @@ nav ul li a:hover {
     font-size: 0.7em;
     color: #008300;
     margin-left: 15px;
+}
+
+.container {
+    padding: 15px 30px;
+    width: calc(100% - 60px);
+}
+
+.see-more {
+    padding: 10px 16px;
+    font-size: .9em;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 74vh;
+    transition: all ease 0.8s;
+}
+
+.see-more:hover {
+    background-color: #220c32;
+    border: 2px solid #fff;
+    color: #fff;
 }
 
 /* Tablet */

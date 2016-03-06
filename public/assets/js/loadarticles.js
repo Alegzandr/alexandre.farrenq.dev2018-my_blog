@@ -32,7 +32,7 @@ $(function () {
         success: function (data) {
             for (var i = 9; i >= 0; i--) {
                 if (data[i]) {
-                    $('main').prepend(
+                    $('#show-more').before(
                         '<article><h3><a href="/article/'
                         + data[i].id
                         + '">'

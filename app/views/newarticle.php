@@ -19,7 +19,7 @@
         <br>
 
         <input type="text" name="title" placeholder="Titre de l'article" autofocus><br>
-        <textarea name="content" cols="150" rows="30" placeholder="Contenu de l'article"></textarea>
+        <textarea name="content" cols="33" rows="14" placeholder="Contenu de l'article"></textarea>
 
         <br>
         <input type="submit">
