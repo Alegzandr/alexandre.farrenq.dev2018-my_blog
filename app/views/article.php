@@ -41,12 +41,12 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
 
     <section class="comments-block">
         <form name="comment" action="/comment" method="post">
+            <input type="hidden" name="article" value="<?php echo($id); ?>">
             <?php
                 if (isset($_SESSION['auth'])) {
                     echo('
                         <label for="comment">Commenter</label><br>'
                         . '<textarea name="comment" id="comment" placeholder="Écrire un commentaire ..."></textarea><br>'
-                        . '<input type="hidden" name="article" value="' . $id .'">'
                         . '<input type="submit">
                         ');
                 } else {
