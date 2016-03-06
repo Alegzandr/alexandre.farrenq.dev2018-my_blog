@@ -31,7 +31,7 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
             echo('<br><p class="edit">Modifié le ' . $edit_author . ' par ' . $edit_date . '.</p>');
         }
 
-        if ($author === $_SESSION['auth']['username']) {
+        if (isset($_SESSION['auth']) && $author === $_SESSION['auth']['username']) {
             echo('<a href="/edit/'. $id .'">Éditer l\'article</a>');
         }
         ?>
