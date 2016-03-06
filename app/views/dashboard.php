@@ -22,7 +22,7 @@
             <p>Gérez l'ensemble des utilisateurs.</p>
         </article>
 
-        <button id="more-users">Afficher plus d'utilisateurs</button>
+        <button id="more-users">Afficher des d'utilisateurs</button>
     </section>
 
     <section id="articles">
@@ -31,7 +31,7 @@
             <p>Gérez l'ensemble des articles.</p>
         </article>
 
-        <button id="more-articles">Afficher plus d'articles</button>
+        <button id="more-articles">Afficher des d'articles</button>
     </section>
 
     <section id="comments">
@@ -40,7 +40,7 @@
             <p>Gérez l'ensemble des commentaires.</p>
         </article>
 
-        <button id="more-articles">Afficher plus de commentaires</button>
+        <button id="more-comments">Afficher des commentaires</button>
     </section>
 </main>
 

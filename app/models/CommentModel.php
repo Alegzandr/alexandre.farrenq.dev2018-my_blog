@@ -53,6 +53,23 @@ class CommentModel
         return $comments;
     }
 
+    public static function showAllComments($pdo)
+    {
+        $q = $pdo->prepare('
+            SELECT *
+            FROM comments
+            ORDER BY id DESC
+            ');
+        $q->execute();
+
+        $comments = [];
+        while ($results = $q->fetch()) {
+            array_push($comments, $results);
+        }
+
+        return $comments;
+    }
+
     public static function noComment($pdo, $article_id)
     {
         if ($article_id == '') {

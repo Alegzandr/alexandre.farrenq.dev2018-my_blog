@@ -68,7 +68,9 @@ $(function () {
                     for (var i = articleLength; i < articleLength + 11; i++) {
                         if (data[i]) {
                             $('article').last().after(
-                                '<article class="comment"><h5><a href="/profile/'
+                                '<article class="comment-'
+                                + data[i].id
+                                + '"><h5><a href="/profile/'
                                 + data[i].author.toLowerCase()
                                 + '">'
                                 + data[i].author

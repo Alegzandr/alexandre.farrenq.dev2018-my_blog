@@ -14,6 +14,9 @@ class ProfileController extends BaseController
         if (ProfileModel::exists($this->pdo, $user)) {
             include('../app/views/profile.php');
             return;
+        } elseif ($user === 'Moi') {
+            header('Location: /profile');
+            exit;
         } else {
             header('Location: /404');
             exit;

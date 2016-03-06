@@ -15,6 +15,16 @@ $(function () {
         }
     }
 
+    function limitLength(str, limit) {
+        limit = typeof limit !== 'undefined' ? limit : 60;
+        if (str.length > 60) {
+            return str.substring(0, limit) + ' ...';
+        }
+        else {
+            return str;
+        }
+    }
+
     $('#more-users').click(function () {
         $.ajax({
             url: '/loadusers',
@@ -22,10 +32,16 @@ $(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.length >= $('#users > article').length) {
-                    var articleLength = $('#users > article').length;
-                    for (var i = articleLength; i < articleLength + 11; i++) {
+                    var articleLength = $('#users > article').length -1;
+                    for (var i = articleLength; i < articleLength + 10; i++) {
                         if (data[i]) {
-
+                            $('#users > article').last().after(
+                                '<article><h4><a href="/profile/'
+                                + data[i].username.toLowerCase()
+                                + '">'
+                                + data[i].username
+                                + '</a></h4></article>'
+                            );
                         }
                     }
                 }
@@ -40,10 +56,24 @@ $(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.length >= $('#articles > article').length) {
-                    var articleLength = $('#articles > article').length;
-                    for (var i = articleLength; i < articleLength + 11; i++) {
+                    var articleLength = $('#articles > article').length -1;
+                    for (var i = articleLength; i < articleLength + 10; i++) {
                         if (data[i]) {
-
+                            $('#articles > article').last().after(
+                                '<article><h3><a href="/edit/'
+                                + data[i].id
+                                + '">'
+                                + data[i].title
+                                + '</a></h3><h4><a href="/profile/'
+                                + data[i].author.toLowerCase()
+                                + '">'
+                                + data[i].author
+                                + '</a>, le '
+                                + formatDate(data[i].timestamp * 1000)
+                                + '</h4><p class="text">'
+                                + limitLength(data[i].content)
+                                + '</p></article>'
+                            );
                         }
                     }
                 }
@@ -53,15 +83,27 @@ $(function () {
 
     $('#more-comments').click(function () {
         $.ajax({
-            url: '/loadcomments',
+            url: '/loadallcomments',
             type: 'get',
             dataType: 'json',
             success: function (data) {
                 if (data.length >= $('#comments > article').length) {
-                    var articleLength = $('#comments > article').length;
-                    for (var i = articleLength; i < articleLength + 11; i++) {
+                    var articleLength = $('#comments > article').length - 1;
+                    for (var i = articleLength; i < articleLength + 10; i++) {
                         if (data[i]) {
-
+                            $('#comments > article').last().after(
+                                '<article><h5><a href="/profile/'
+                                + data[i].author.toLowerCase()
+                                + '">'
+                                + data[i].author
+                                + '</a>, le '
+                                + formatDate(data[i].timestamp * 1000)
+                                + '</h5><p class="text">'
+                                + data[i].content
+                                + '</p><a href="/editcomment/'
+                                + data[i].id
+                                + '">Modifier</a></article>'
+                            );
                         }
                     }
                 }
