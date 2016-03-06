@@ -1,7 +1,8 @@
 <header id="top">
     <h1><a href="/">Sup'Teaching.fr</a></h1>
 
-    <nav>
+    <i class="fa fa-bars" id="right-menu" href="#sidr"></i>
+    <nav class="not-mobile" id="sidr">
         <ul>
             <li><a href="/">Accueil</a></li>
             <?php

@@ -1,10 +1,17 @@
 /* Mobile */
+html {
+    font-size: 100%;
+}
 
 body {
     font-family: Helvetica, Arial, sans-serif;
     background-color: #ededed;
     padding: 95px 15px;
     line-height: 1.5;
+}
+
+.not-mobile {
+    display: none;
 }
 
 .confirm {
@@ -47,6 +54,10 @@ a {
     color: #000;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 nav ul li a {
     color: #2c3438;
 }
@@ -54,14 +65,6 @@ nav ul li a {
 nav ul li a:hover {
     text-shadow: 0px 0px 5px rgba(150, 150, 150, 0.9);
     color: #000;
-}
-
-h3 {
-    font-size: 1.2em;
-}
-
-form {
-    font-size: 1.1rem;
 }
 
 .errors {
@@ -76,18 +79,12 @@ form {
     margin-left: 15px;
 }
 
-label {
-    font-size: 0.7em;
-}
-
-footer {
-    display: none;
-}
-
 /* Tablet */
 
 @media (min-width: 641px) {
-
+    .not-mobile {
+        display: block;
+    }
 }
 
 /* Small desktop */
