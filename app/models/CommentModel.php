@@ -24,8 +24,14 @@ class CommentModel
     {
         $q = $pdo->prepare('
             UPDATE comments
-            SET
+            SET content = :content,
+            timestamp = :timestamp
+            WHERE id = :id
         ');
+        $q->bindParam(':id', $id);
+        $q->bindParam(':content', $content);
+        $q->bindParam(':timestamp', $timestamp);
+        $q->execute();
     }
 
     public static function showComments($pdo, $article_id)

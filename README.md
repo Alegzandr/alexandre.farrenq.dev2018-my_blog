@@ -6,4 +6,10 @@ just make sure that you have a vHost to the public folder.
 Also, you will have to import the .sql file in the root.
 That's all :)
 
+Accounts logs :
+- login : password
+- alegzandr : coincoin
+- tretiakoff : alexalex
+- somewhere : jujuzamzam
+
 -Alegzandr

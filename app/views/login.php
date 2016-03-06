@@ -16,8 +16,8 @@
         <h3>S'identifier</h3>
         <br>
 
-        <input type="text" name="username" placeholder="Nom d'utilisateur" required autofocus><br>
-        <input type="password" name="password" placeholder="Mot de passe" required><br>
+        <input type="text" name="username" placeholder="Nom d'utilisateur" autofocus><br>
+        <input type="password" name="password" placeholder="Mot de passe"><br>
         <input type="checkbox" name="remember" id="remember">
         <label for="remember">Se souvenir de moi</label><br>
 
