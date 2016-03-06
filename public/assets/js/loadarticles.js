@@ -41,7 +41,7 @@ $(function () {
                         + data[i].author.toLowerCase()
                         + '">'
                         + data[i].author
-                        + '</a> le '
+                        + '</a>, le '
                         + formatDate(data[i].timestamp * 1000)
                         + '</h4><p class="text">'
                         + limitLength(data[i].content)
@@ -71,7 +71,7 @@ $(function () {
                                 + data[i].author.toLowerCase()
                                 + '">'
                                 + data[i].author
-                                + '</a> le '
+                                + '</a>, le '
                                 + formatDate(data[i].timestamp * 1000)
                                 + '</h4><p class="text">'
                                 + limitLength(data[i].content)

@@ -27,18 +27,26 @@ $(function () {
                 for (var i = 9; i >= 0; i--) {
                     if (data[i]) {
                         $('.show-comments').prepend(
-                            '<article class="comment"><h5><a href="/profile/'
+                            '<article class="comment-'
+                            + data[i].id
+                            + '"><h5><a href="/profile/'
                             + data[i].author.toLowerCase()
                             + '">'
                             + data[i].author
-                            + '</a> le '
+                            + '</a>, le '
                             + formatDate(data[i].timestamp * 1000)
                             + '</h5><p class="text">'
                             + data[i].content
                             + '</p></article>'
                         );
-                        if (data.last_edit_date !== data.timestamp) {
-                            $('article').last().after('<p>(modifié)</p>');
+                        if (data.edit_timestamp !== data.timestamp) {
+                            $('.comment-' + data[i].id).after('<p>(modifié)</p>');
+                        }
+                        if (data[i].author === 'Moi') {
+                            $('.comment-' + data[i].id).after('<a href="/editcomment/'
+                                + data[i].id
+                                + '">Modifier le commentaire</a>'
+                            );
                         }
                     }
                 }
@@ -64,14 +72,20 @@ $(function () {
                                 + data[i].author.toLowerCase()
                                 + '">'
                                 + data[i].author
-                                + '</a> le '
+                                + '</a>, le '
                                 + formatDate(data[i].timestamp * 1000)
                                 + '</h5><p class="text">'
                                 + data[i].content
                                 + '</p></article>'
                             );
-                            if (data.last_edit_date !== data.timestamp) {
-                                $('article').last().after('<p>(modifié)</p>');
+                            if (data.edit_timestamp !== data.timestamp) {
+                                $('.comment-' + data[i].id).after('<p>(modifié)</p>');
+                            }
+                            if (data[i].author === 'Moi') {
+                                $('.comment-' + data[i].id).after('<a href="/editcomment/'
+                                    + data[i].id
+                                    + '">Modifier le commentaire</a>'
+                                );
                             }
                         }
                     }

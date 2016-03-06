@@ -14,6 +14,7 @@ if (isset($url_composants[1])) {
     $controller_name = 'index';
 }
 if (isset($url_composants[2])) {
+    // Exceptions to 404 when we need to read info from URL
     if ($url_composants[1] == 'profile' && $url_composants[2] == 'edit') {
         $action_name = 'edit';
     } elseif ($url_composants[1] == 'profile' && $url_composants[2] == 'delete') {
@@ -25,6 +26,10 @@ if (isset($url_composants[2])) {
     } elseif ($url_composants[1] == 'article') {
         $action_name = 'index';
     } elseif ($url_composants[1] == 'deletearticle') {
+        $action_name = 'index';
+    } elseif ($url_composants[1] == 'editcomment') {
+        $action_name = 'index';
+    } elseif ($url_composants[1] == 'deletecomment') {
         $action_name = 'index';
     } else {
         $action_name = $url_composants[2];

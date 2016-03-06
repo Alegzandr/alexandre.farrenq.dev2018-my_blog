@@ -6,7 +6,6 @@ $author = ArticleModel::getAuthor($this->pdo, $id);
 $content = ArticleModel::getContent($this->pdo, $id);
 $edit_author = ArticleModel::getEditAuthor($this->pdo, $id);
 $edit_date = ArticleModel::getEditDate($this->pdo, $id);
-// TODO: Same with comments !
 ?>
 <!doctype html>
 <html lang="fr">
@@ -64,7 +63,7 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
             if (CommentModel::noComment($this->pdo, $id)) {
                 echo('<p>Aucun commentaire.</p>');
             } else {
-                echo('<button id="show-more">En afficher plus</button>');
+                echo('<br><button id="show-more">En afficher plus</button>');
             }
             ?>
         </div>

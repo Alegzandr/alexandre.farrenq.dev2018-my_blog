@@ -75,4 +75,62 @@ class CommentModel
             return true;
         }
     }
+
+    public static function getAuthor($pdo, $id)
+    {
+        $q = $pdo->prepare('
+            SELECT author
+            FROM comments
+            WHERE id = :id
+            ');
+        $q->bindParam(':id', $id);
+        $q->execute();
+
+        $result = $q->fetch();
+        return $result['author'];
+    }
+
+    public static function getContent($pdo, $id)
+    {
+        $q = $pdo->prepare('
+            SELECT content
+            FROM comments
+            WHERE id = :id
+            ');
+        $q->bindParam(':id', $id);
+        $q->execute();
+
+        $result = $q->fetch();
+        return $result['content'];
+    }
+
+    public static function exists($pdo, $id)
+    {
+        if ($id == '') {
+            return false;
+        }
+
+        $q = $pdo->prepare('
+            SELECT id
+            FROM comments
+            WHERE id = :id
+            ');
+        $q->bindParam(':id', $id);
+        $q->execute();
+
+        $result = $q->fetch();
+
+        if ($result['id'] == $id) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function delete($pdo, $id)
+    {
+        $q = $pdo->prepare('DELETE from comments WHERE id = :id');
+        $q->bindParam(':id', $id);
+        $q->execute();
+    }
 }

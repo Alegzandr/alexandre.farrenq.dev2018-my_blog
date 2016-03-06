@@ -8,6 +8,20 @@ class LoadCommentsController extends BaseController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: POST');
 
-        echo(json_encode(CommentModel::showComments($this->pdo, htmlentities($_POST['id']))));
+        $comments = CommentModel::showComments($this->pdo, htmlentities($_POST['id']));
+
+        if (isset($_SESSION['auth'])) {
+            $needed = $_SESSION['auth']['username'];
+        } else {
+            $needed = '';
+        }
+
+        for ($i = 0; $i < count($comments); $i++) {
+            if ($comments[$i]['author'] == $needed) {
+                $comments[$i]['author'] = 'Moi';
+            }
+        }
+
+        echo(json_encode($comments));
     }
 }
