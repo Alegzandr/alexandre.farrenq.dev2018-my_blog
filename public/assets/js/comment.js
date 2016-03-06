@@ -46,7 +46,7 @@ $(function () {
         });
     }
 
-    loadCommentss();
+    loadComments();
 
     $('#show-more').click(function () {
         $.ajax({
