@@ -18,8 +18,9 @@ class EditProfileController extends BaseController
         $password = trim(htmlentities($_POST['password']));
         $password2 = trim(htmlentities($_POST['password2']));
 
-        $id = ProfileModel::getID($this->pdo, $_SESSION['auth']['username']);
-        $timestamp = ProfileModel::getTimestamp($this->pdo, $username);
+        $old_username = $_SESSION['auth']['username'];
+        $id = ProfileModel::getID($this->pdo, $old_username);
+        $timestamp = ProfileModel::getTimestamp($this->pdo, $old_username);
 
         if (!isset($username) || empty($username)) {
             $errors['username'] = '<span class="errors">Non saisi</span>';
@@ -63,7 +64,7 @@ class EditProfileController extends BaseController
         }
 
         if (!isset($password) || empty($password)) {
-            $password = SigninModel::getPassword($this->pdo, $username);
+            $password = SigninModel::getPassword($this->pdo, $old_username);
             $hash = $password;
             $empty_pass = true;
         } elseif (strlen($password) < 8) {
@@ -88,10 +89,23 @@ class EditProfileController extends BaseController
         $errors['valid'] = $valid;
 
         if ($valid) {
-            ProfileModel::editUser($this->pdo, $id, $username, $first_name, $last_name, $mail, $hash);
+            ProfileModel::editUser(
+                $this->pdo,
+                $id,
+                $old_username,
+                $username,
+                $first_name,
+                $last_name,
+                $mail,
+                $hash
+            );
 
             // Update session variables
             unset($_SESSION);
+            session_destroy();
+            setcookie('auth', '', time() - 3600, '/', null, null, true);
+
+            session_start();
             AuthModel::authUser($this->pdo, $username, $hash);
         }
 

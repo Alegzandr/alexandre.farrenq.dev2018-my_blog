@@ -129,6 +129,7 @@ class ProfileModel
     public static function editUser(
         $pdo,
         $id,
+        $old_username,
         $username,
         $first_name,
         $last_name,
@@ -152,6 +153,21 @@ class ProfileModel
         $q->bindParam(':mail', $mail);
         $q->bindParam(':password', $password);
         $q->execute();
+        $q->closeCursor();
+
+        // Update name in articles
+        $r = $pdo->prepare('UPDATE articles SET author = :username WHERE author = :old_username');
+        $r->bindParam(':old_username', $old_username);
+        $r->bindParam(':username', $username);
+        $r->execute();
+        $r->closeCursor();
+
+        // Update name in comments
+        $s = $pdo->prepare('UPDATE comments SET author = :username WHERE author = :old_username');
+        $s->bindParam(':old_username', $old_username);
+        $s->bindParam(':username', $username);
+        $s->execute();
+        $s->closeCursor();
     }
 
     public static function deleteUser($pdo, $username)
