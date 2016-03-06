@@ -14,7 +14,7 @@
 <?php include('header.php'); ?>
 
 <div class="splash">
-    <h1>Les profs les plus cools</h1>
+    <h1 class="welcome"></h1>
     <hr>
     <h2>SUP'Internet</h2>
 
@@ -29,5 +29,12 @@
 
 <?php include('footer.php'); ?>
 <script src="/assets/js/loadarticles.js"></script>
+<script src="/assets/js/welcome.min.js"></script>
+<script>
+    // Calling plugin
+    $(function () {
+        $('.welcome').welcome();
+    });
+</script>
 </body>
 </html>
