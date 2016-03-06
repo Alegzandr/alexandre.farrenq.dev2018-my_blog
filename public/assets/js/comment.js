@@ -15,7 +15,7 @@ $(function () {
         }
     }
 
-    function loadArticles() {
+    function loadComments() {
         $('.comment').remove();
 
         $.ajax({
@@ -46,7 +46,7 @@ $(function () {
         });
     }
 
-    loadArticles();
+    loadCommentss();
 
     $('#show-more').click(function () {
         $.ajax({
@@ -91,7 +91,7 @@ $(function () {
             function (data) {
                 if (data.valid) {
                     $('form[name="comment"]').after('<span class="success">Commentaire envoyé !</span>');
-                    loadArticles();
+                    loadComments();
                 }
                 else {
                     if (data.article) {

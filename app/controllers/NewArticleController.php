@@ -18,6 +18,9 @@ class NewArticleController extends BaseController
         if (!isset($title) || empty($title)) {
             $errors['title'] = '<span class="errors">Non saisi</span>';
             $valid = false;
+        } elseif (strlen($title) > 51) {
+            $errors['title'] = '<span class="errors">Trop long</span>';
+            $valid = false;
         }
         if (!isset($content) || empty($content)) {
             $errors['content'] = '<span class="errors">Non saisi</span>';

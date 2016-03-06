@@ -1,5 +1,5 @@
 $(function () {
-    $('form[name="editarticle"]').submit(function () {
+    $('form[name="edit-article"]').submit(function () {
         $('.errors').remove();
         $('.success').remove();
 
@@ -10,14 +10,9 @@ $(function () {
             $(this).serialize(),
             function (data) {
                 if (data.valid) {
-                    if (data.create) {
-                        $('form[name="newarticle"]').after(data.edit);
-                    }
-                    else {
-                        $('form[name="newarticle"]').after(
-                            '<span class="success">Votre article a bien été modifié !</span>'
-                        );
-                    }
+                    $('form[name="edit-article"]').after(
+                        '<span class="success">Votre article a bien été modifié !</span>'
+                    );
                 }
                 else {
                     if (data.title) {
@@ -25,6 +20,9 @@ $(function () {
                     }
                     if (data.content) {
                         content.after(data.content);
+                    }
+                    if (data.id) {
+                        content.after(data.id);
                     }
                 }
             }, 'json');

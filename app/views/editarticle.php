@@ -25,6 +25,8 @@ $content = ArticleModel::getContent($this->pdo, $id);
         <label for="content">Contenu</label><br>
         <textarea name="content" id="content"><?php echo($content); ?></textarea><br>
 
+        <input type="hidden" name="id" value="<?php echo($id); ?>">
+
         <br>
         <input type="submit">
     </form>
