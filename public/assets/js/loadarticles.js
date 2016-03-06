@@ -30,7 +30,7 @@ $(function () {
         type: 'get',
         dataType: 'json',
         success: function (data) {
-            for (var i = 9; i >= 0; i--) {
+            for (var i = 0; i < 11; i++) {
                 if (data[i]) {
                     $('#show-more').before(
                         '<article><h3><a href="/article/'

@@ -32,7 +32,7 @@ $content = ArticleModel::getContent($this->pdo, $id);
         <input type="text" name="title" id="title" value="<?php echo($title); ?>"><br>
 
         <label for="content">Contenu</label><br>
-        <textarea name="content" id="content"><?php echo($content); ?></textarea><br>
+        <textarea name="content" id="content" cols="33" rows="14"><?php echo($content); ?></textarea><br>
 
         <input type="hidden" name="id" value="<?php echo($id); ?>">
 

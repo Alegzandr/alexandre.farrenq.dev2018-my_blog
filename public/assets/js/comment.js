@@ -40,10 +40,10 @@ $(function () {
                             + '</p></article>'
                         );
                         if (data.edit_timestamp !== data.timestamp) {
-                            $('.comment-' + data[i].id).after('<p>(modifié)</p>');
+                            $('.comment-' + data[i].id).append('<p>(modifié)</p>');
                         }
                         if (data[i].author === 'Moi') {
-                            $('.comment-' + data[i].id).after('<a href="/editcomment/'
+                            $('.comment-' + data[i].id).append('<a class="edit" href="/editcomment/'
                                 + data[i].id
                                 + '">Modifier le commentaire</a>'
                             );
@@ -81,10 +81,10 @@ $(function () {
                                 + '</p></article>'
                             );
                             if (data.edit_timestamp !== data.timestamp) {
-                                $('.comment-' + data[i].id).after('<p>(modifié)</p>');
+                                $('.comment-' + data[i].id).append('<p>(modifié)</p>');
                             }
                             if (data[i].author === 'Moi') {
-                                $('.comment-' + data[i].id).after('<a href="/editcomment/'
+                                $('.comment-' + data[i].id).append('<a class="edit" href="/editcomment/'
                                     + data[i].id
                                     + '">Modifier le commentaire</a>'
                                 );

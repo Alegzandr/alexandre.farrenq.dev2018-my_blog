@@ -291,6 +291,10 @@ nav ul li a:hover {
         border-top: 1px solid #000;
         padding-top: 10px;
     }
+
+    .comments-block .text {
+        border: 0;
+    }
 }
 
 /* Small desktop */
@@ -306,6 +310,11 @@ nav ul li a:hover {
 
     html {
         font-size: 110%;
+    }
+
+    main {
+        width: 85%;
+        margin: auto;
     }
 }
 

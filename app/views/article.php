@@ -56,6 +56,7 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
                 echo('<p class="warning">Veuillez vous connecter pour pouvoir commenter.</p>');
             }
             ?>
+            <br>&nbsp;
         </form>
 
         <div class="show-comments">
@@ -63,7 +64,7 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
             if (CommentModel::noComment($this->pdo, $id)) {
                 echo('<p>Aucun commentaire.</p>');
             } else {
-                echo('<br><button id="show-more">En afficher plus</button>');
+                echo('<br><br><button id="show-more">En afficher plus</button>');
             }
             ?>
         </div>
