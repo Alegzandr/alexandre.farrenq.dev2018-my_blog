@@ -137,7 +137,7 @@ class ArticleModel
         $q->bindParam(':timestamp', $timestamp);
         $q->execute();
 
-        return '<span class="success">L\'article a bien été édité.</span>';
+        return '<span class="success">L\'article a bien été créé.</span>';
     }
 
     public static function edit($pdo, $id, $title, $content, $author)

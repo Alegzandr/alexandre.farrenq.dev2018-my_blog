@@ -15,6 +15,16 @@ $(function () {
         }
     }
 
+    function limitLength(str, limit) {
+        limit = typeof limit !== 'undefined' ? limit : 60;
+        if (str.length > 60) {
+            return str.substring(0, limit) + ' ...';
+        }
+        else {
+            return str;
+        }
+    }
+
     $.ajax({
         url: '/load',
         type: 'get',
@@ -34,7 +44,7 @@ $(function () {
                         + '</a> le '
                         + formatDate(data[i].timestamp * 1000)
                         + '</h4><p class="text">'
-                        + data[i].content
+                        + limitLength(data[i].content)
                         + '</p></article>'
                     );
                 }
@@ -64,7 +74,7 @@ $(function () {
                                 + '</a> le '
                                 + formatDate(data[i].timestamp * 1000)
                                 + '</h4><p class="text">'
-                                + data[i].content
+                                + limitLength(data[i].content)
                                 + '</p></article>'
                             );
                         }
