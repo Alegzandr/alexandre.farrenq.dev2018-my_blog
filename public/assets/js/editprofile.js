@@ -40,4 +40,22 @@ $(function () {
 
         return false;
     });
+
+    // Unsubscribe choice
+    
+    $('#unsubscribe').click(function () {
+        $(this).fadeOut();
+        $('form[name="edit-profile"]').fadeOut();
+        $('.confirm').fadeIn(1500);
+    });
+
+    $('#no').click(function () {
+        $('.confirm').fadeOut();
+        $('form[name="edit-profile"]').fadeIn(1500);
+        $('#unsubscribe').fadeIn(1500);
+    });
+
+    $('#yes').click(function () {
+        window.open('/profile/delete', '_self');
+    });
 });

@@ -19,7 +19,8 @@ $(function () {
                     }
                     else {
                         $('form[name="signup"]')
-                            .after('<span class="success">Vous avez bien été inscrit.<span>')
+                            .after('<p class="success">Vous avez bien été inscrit.</p>' +
+                                '<a href="/login">Se connecter ici.</a>')
                             .fadeOut();
                     }
                 }

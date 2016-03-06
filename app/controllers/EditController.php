@@ -6,7 +6,7 @@ class EditController extends BaseController
     public function indexAction()
     {
         if (empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
-            header('Location : /');
+            header('Location: /');
             exit;
         } else {
             $article_id = explode('/', $_SERVER['REQUEST_URI'], 4)[2];

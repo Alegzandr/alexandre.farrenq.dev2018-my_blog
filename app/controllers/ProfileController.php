@@ -30,4 +30,17 @@ class ProfileController extends BaseController
             exit;
         }
     }
+
+    public function deleteAction()
+    {
+        if (isset($_SESSION['auth'])) {
+            ProfileModel::deleteUser($this->pdo, $_SESSION['auth']['username']);
+
+            header('Location: /logout');
+            exit;
+        } else {
+            header('Location: /login');
+            exit;
+        }
+    }
 }

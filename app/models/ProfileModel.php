@@ -119,8 +119,7 @@ class ProfileModel
         $q->execute();
 
         $users = [];
-        while ($results = $q->fetch())
-        {
+        while ($results = $q->fetch()) {
             array_push($users, $results);
         }
 
@@ -152,6 +151,13 @@ class ProfileModel
         $q->bindParam(':last_name', $last_name);
         $q->bindParam(':mail', $mail);
         $q->bindParam(':password', $password);
+        $q->execute();
+    }
+
+    public static function deleteUser($pdo, $username)
+    {
+        $q = $pdo->prepare('DELETE from users WHERE username = :username');
+        $q->bindParam(':username', $username);
         $q->execute();
     }
 }

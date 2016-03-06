@@ -12,6 +12,12 @@
 <?php include('header.php') ?>
 
 <main role="main">
+    <div class="confirm">
+        <h3>Êtes-vous sûr ?</h3>
+        <button id="no">Non</button>
+        <button id="yes">Oui</button>
+    </div>
+
     <form name="edit-profile" action="/editprofile" method="post">
         <label for="username">Nom d'utilisateur</label><br>
         <input type="text" name="username" id="username" value="<?php echo($_SESSION['auth']['username']); ?>"><br>
@@ -34,6 +40,9 @@
         <br>
         <input type="submit">
     </form>
+
+    <br>
+    <button id="unsubscribe">Se désinscrire</button>
 </main>
 
 <?php include('footer.php') ?>

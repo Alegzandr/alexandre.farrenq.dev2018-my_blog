@@ -89,6 +89,10 @@ class EditProfileController extends BaseController
 
         if ($valid) {
             ProfileModel::editUser($this->pdo, $id, $username, $first_name, $last_name, $mail, $hash);
+
+            // Update session variables
+            unset($_SESSION);
+            AuthModel::authUser($this->pdo, $username, $hash);
         }
 
         echo(json_encode($errors));

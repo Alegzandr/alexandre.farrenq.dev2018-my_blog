@@ -14,7 +14,11 @@ if (isset($url_composants[1])) {
     $controller_name = 'index';
 }
 if (isset($url_composants[2])) {
-    if ($url_composants[1] == 'profile' && $url_composants[2] != 'edit') {
+    if ($url_composants[1] == 'profile' && $url_composants[2] == 'edit') {
+        $action_name = 'edit';
+    } elseif ($url_composants[1] == 'profile' && $url_composants[2] == 'delete') {
+        $action_name = 'delete';
+    } elseif ($url_composants[1] == 'profile') {
         $action_name = 'index';
     } elseif ($url_composants[1] == 'edit') {
         $action_name = 'index';
