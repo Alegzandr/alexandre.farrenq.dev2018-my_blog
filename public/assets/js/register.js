@@ -18,7 +18,9 @@ $(function () {
                         $('form[name="signup"]').after(data.create);
                     }
                     else {
-                        $('form[name="signup"]').after('<span class="success">Vous avez bien été inscrit.<span>');
+                        $('form[name="signup"]')
+                            .after('<span class="success">Vous avez bien été inscrit.<span>')
+                            .fadeOut();
                     }
                 }
                 else {
