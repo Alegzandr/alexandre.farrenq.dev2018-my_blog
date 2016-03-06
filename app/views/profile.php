@@ -10,8 +10,8 @@ if (!empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
 <head>
     <meta charset="UTF-8">
     <title>Sup'Teaching.fr | Profil de <?php echo($user); ?></title>
-    <link rel="icon" href="../assets/img/favicon.png">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 <?php include('header.php'); ?>

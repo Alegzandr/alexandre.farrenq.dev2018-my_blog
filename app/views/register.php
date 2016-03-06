@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sup'Teaching.fr | Inscription</title>
-    <link rel="icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 <?php include('header.php'); ?>
@@ -28,6 +28,6 @@
 
 <?php include('footer.php'); ?>
 
-<script src="assets/js/register.js"></script>
+<script src="/assets/js/register.js"></script>
 </body>
 </html>

@@ -11,8 +11,8 @@ $content = ArticleModel::getContent($this->pdo, $id);
         Sup'Teaching.fr | Éditer
         <?php echo('"' . $title . '"'); ?>
     </title>
-    <link rel="icon" href="../assets/img/favicon.png">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 <?php include('header.php') ?>
@@ -31,6 +31,6 @@ $content = ArticleModel::getContent($this->pdo, $id);
 </main>
 
 <?php include('footer.php') ?>
-<script src="../assets/js/editarticle.js"></script>
+<script src="/assets/js/editarticle.js"></script>
 </body>
 </html>

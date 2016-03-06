@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sup'Teaching.fr | Créer un article</title>
-    <link rel="icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 <?php include('header.php'); ?>
@@ -23,6 +23,6 @@
 </main>
 
 <?php include('footer.php'); ?>
-<script src="assets/js/newarticle.js"></script>
+<script src="/assets/js/newarticle.js"></script>
 </body>
 </html>

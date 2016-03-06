@@ -4,6 +4,10 @@ class EditArticleController extends BaseController
 {
     public function indexAction()
     {
-        // Script to check form
+        header('content-type: application/json');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: POST');
+
+
     }
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sup'Teaching.fr</title>
-    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -15,6 +15,6 @@
 </main>
 
 <?php include('footer.php'); ?>
-<script src="assets/js/loadarticles.js"></script>
+<script src="/assets/js/loadarticles.js"></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sup'Teaching.fr</title>
-    <link rel="icon" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
 <?php include('header.php'); ?>
@@ -42,6 +42,6 @@
 </main>
 
 <?php include('footer.php'); ?>
-<script src="assets/js/dashboard.js"></script>
+<script src="/assets/js/dashboard.js"></script>
 </body>
 </html>
