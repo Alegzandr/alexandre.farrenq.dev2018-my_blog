@@ -23,6 +23,19 @@ h4 {
     margin-top: -8px;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 1025px) {
+    .splash > h1 {
+        font-size: 1.8em;
+        margin-top: 25vh;
+    }
 
+    .splash > h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1441px) {
+    main {
+        margin: 90vh auto 40px auto;
+    }
 }
