@@ -8,8 +8,8 @@ That's all :)
 
 Accounts logs :
 - login : password
-- alegzandr : coincoin
-- tretiakoff : alexalex
-- somewhere : jujuzamzam
+- alegzandr : coincoin (superadmin)
+- somewhere : jujuzamzam (blogger)
+- tretiakoff : alexalex (user)
 
 -Alegzandr
