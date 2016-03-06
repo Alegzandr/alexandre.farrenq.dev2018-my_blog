@@ -9,6 +9,7 @@ if (!empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sup'Teaching.fr | Profil de <?php echo($user); ?></title>
     <link rel="icon" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="/assets/css/default.css">
