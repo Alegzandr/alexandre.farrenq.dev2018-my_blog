@@ -17,7 +17,7 @@ class CommentController extends BaseController
         $comment = trim(htmlentities($_POST['comment']));
         $timestamp = time();
 
-        if(!ArticleModel::exists($this->pdo, $id)) {
+        if (!ArticleModel::exists($this->pdo, $id)) {
             $errors['article'] = '<span class="errors">Cet article n\'existe pas</span>';
             $valid = false;
         } elseif (!isset($comment) || empty($comment)) {

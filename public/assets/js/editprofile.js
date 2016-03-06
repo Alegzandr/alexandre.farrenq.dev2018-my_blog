@@ -41,8 +41,8 @@ $(function () {
         return false;
     });
 
-    // Unsubscribe choice
-    
+    // Unsubscribe choices
+
     $('#unsubscribe').click(function () {
         $(this).fadeOut();
         $('form[name="edit-profile"]').fadeOut();

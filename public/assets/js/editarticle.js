@@ -29,4 +29,22 @@ $(function () {
 
         return false;
     });
+
+    // Delete choices
+
+    $('#delete').click(function () {
+        $(this).fadeOut();
+        $('form[name="edit-article"]').fadeOut();
+        $('.confirm').fadeIn(1500);
+    });
+
+    $('#no').click(function () {
+        $('.confirm').fadeOut();
+        $('form[name="edit-article"]').fadeIn(1500);
+        $('#delete').fadeIn(1500);
+    });
+
+    $('#yes').click(function () {
+        window.open('/deletearticle/' + $('input[name="id"]').val(), '_self');
+    });
 });

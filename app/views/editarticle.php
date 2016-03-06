@@ -20,6 +20,12 @@ $content = ArticleModel::getContent($this->pdo, $id);
 <?php include('header.php') ?>
 
 <main role="main">
+    <div class="confirm">
+        <h3>Êtes-vous sûr ?</h3>
+        <button id="no">Non</button>
+        <button id="yes">Oui</button>
+    </div>
+
     <form name="edit-article" action="/editarticle" method="post">
         <label for="title">Titre</label><br>
         <input type="text" name="title" id="title" value="<?php echo($title); ?>"><br>
@@ -32,6 +38,9 @@ $content = ArticleModel::getContent($this->pdo, $id);
         <br>
         <input type="submit">
     </form>
+
+    <br>
+    <button id="delete">Supprimer l'article</button>
 </main>
 
 <?php include('footer.php') ?>

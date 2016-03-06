@@ -11,7 +11,7 @@ class EditArticleController extends BaseController
         $valid = true;
         $errors = [];
 
-        if(ArticleModel::exists($this->pdo, htmlentities($_POST['id']))){
+        if (ArticleModel::exists($this->pdo, htmlentities($_POST['id']))) {
             $id = htmlentities($_POST['id']);
         } else {
             return (json_encode($errors['id'] = '<span class="errors">Cet article n\'existe pas</span>'));

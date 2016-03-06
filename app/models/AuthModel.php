@@ -13,7 +13,7 @@ class AuthModel
         $q->execute();
         $result = $q->fetch();
 
-        if(hash('sha256', $result['password']) === $password) {
+        if (hash('sha256', $result['password']) === $password) {
             $_SESSION['auth'] = $result;
         } else {
             CookieController::destroy();
@@ -31,7 +31,7 @@ class AuthModel
         $q->execute();
         $result = $q->fetch();
 
-        if($password === $result['password']) {
+        if ($password === $result['password']) {
             $_SESSION['auth'] = $result;
         }
     }

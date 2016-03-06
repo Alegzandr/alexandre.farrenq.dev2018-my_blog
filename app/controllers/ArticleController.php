@@ -15,5 +15,4 @@ class ArticleController extends BaseController
             include('../app/views/article.php');
             return;
         }
-    }
 }

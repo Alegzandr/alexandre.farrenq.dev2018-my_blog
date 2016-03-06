@@ -170,8 +170,7 @@ class ArticleModel
         $q->execute();
 
         $articles = [];
-        while ($results = $q->fetch())
-        {
+        while ($results = $q->fetch()) {
             array_push($articles, $results);
         }
 
@@ -199,5 +198,19 @@ class ArticleModel
         } else {
             return false;
         }
+    }
+
+    public static function delete($pdo, $id)
+    {
+        $q = $pdo->prepare('DELETE from articles WHERE id = :id');
+        $q->bindParam(':id', $id);
+        $q->execute();
+        $q->closeCursor();
+
+        // Delete comments
+        $r = $pdo->prepare('DELETE from comments WHERE article_id = :article_id');
+        $r->bindParam(':article_id', $id);
+        $r->execute();
+        $r->closeCursor();
     }
 }

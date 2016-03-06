@@ -33,8 +33,11 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
             echo('<br><p class="edit">Modifié le ' . $edit_author . ' par ' . $edit_date . '.</p>');
         }
 
-        if (isset($_SESSION['auth']) && $author === $_SESSION['auth']['username']) {
-            echo('<a href="/edit/'. $id .'">Éditer l\'article</a>');
+        if (
+            isset($_SESSION['auth']) && $author === $_SESSION['auth']['username']
+            || isset($_SESSION['auth']) && $_SESSION['auth']['permissions'] === 'superadmin'
+        ) {
+            echo('<a href="/edit/' . $id . '">Éditer l\'article</a>');
         }
         ?>
     </section>
@@ -43,15 +46,15 @@ $edit_date = ArticleModel::getEditDate($this->pdo, $id);
         <form name="comment" action="/comment" method="post">
             <input type="hidden" name="article" value="<?php echo($id); ?>">
             <?php
-                if (isset($_SESSION['auth'])) {
-                    echo('
+            if (isset($_SESSION['auth'])) {
+                echo('
                         <label for="comment">Commenter</label><br>'
-                        . '<textarea name="comment" id="comment" placeholder="Écrire un commentaire ..."></textarea><br>'
-                        . '<input type="submit">
+                    . '<textarea name="comment" id="comment" placeholder="Écrire un commentaire ..."></textarea><br>'
+                    . '<input type="submit">
                         ');
-                } else {
-                    echo('<p class="warning">Veuillez vous connecter pour pouvoir commenter.</p>');
-                }
+            } else {
+                echo('<p class="warning">Veuillez vous connecter pour pouvoir commenter.</p>');
+            }
             ?>
         </form>
 

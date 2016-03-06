@@ -1,4 +1,5 @@
 <?php
+
 // Creates articles
 
 class NewController extends BaseController
