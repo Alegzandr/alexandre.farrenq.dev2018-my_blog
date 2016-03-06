@@ -25,7 +25,7 @@ if (!empty(explode('/', $_SERVER['REQUEST_URI'], 4)[2])) {
 
     <?php
     if (isset($_SESSION['auth']) && $_SESSION['auth']['username'] === $user) {
-        echo('<a href="/profile/edit" id="editp-btn">Éditer mon profil</a>');
+        echo('<a href="/profile/edit" class="edit">Éditer mon profil</a>');
     }
     ?>
 

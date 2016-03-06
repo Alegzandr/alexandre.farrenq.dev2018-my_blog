@@ -23,6 +23,7 @@
         </article>
 
         <button id="more-users">Afficher des d'utilisateurs</button>
+        <br>&nbsp;
     </section>
 
     <section id="articles">
@@ -32,6 +33,7 @@
         </article>
 
         <button id="more-articles">Afficher des d'articles</button>
+        <br>&nbsp;
     </section>
 
     <section id="comments">
@@ -41,6 +43,7 @@
         </article>
 
         <button id="more-comments">Afficher des commentaires</button>
+        <br>&nbsp;
     </section>
 </main>
 

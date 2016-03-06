@@ -10,3 +10,19 @@ header {
 footer {
     background-color: #220c32;
 }
+
+main > h3 {
+    font-size: 1.4em;
+}
+
+h3 > a {
+    border-bottom: 1px solid #a3a3a3;
+}
+
+h4 {
+    margin-top: -8px;
+}
+
+@media (min-width: 641px) {
+
+}

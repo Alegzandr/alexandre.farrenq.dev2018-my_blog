@@ -18,8 +18,8 @@
         <h3>Créer un article</h3>
         <br>
 
-        <input type="text" name="title" placeholder="Titre de l'article" autofocus><br>
-        <textarea name="content" cols="33" rows="14" placeholder="Contenu de l'article"></textarea>
+        <input type="text" name="title" placeholder="Titre de l'article" autofocus><br><br>
+        <textarea name="content" cols="33" rows="14" placeholder="Contenu de l'article"></textarea><br>
 
         <br>
         <input type="submit">

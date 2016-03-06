@@ -16,8 +16,8 @@ $(function () {
     }
 
     function limitLength(str, limit) {
-        limit = typeof limit !== 'undefined' ? limit : 60;
-        if (str.length > 60) {
+        limit = typeof limit !== 'undefined' ? limit : 50;
+        if (str.length > limit) {
             return str.substring(0, limit) + ' ...';
         }
         else {
