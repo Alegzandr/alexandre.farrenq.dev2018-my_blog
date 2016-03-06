@@ -6,7 +6,6 @@
     <title>Sup'Teaching.fr</title>
     <link rel="icon" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="/assets/css/default.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/jquery.sidr.dark.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>

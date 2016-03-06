@@ -1,7 +1,7 @@
 <header id="top">
     <h1><a href="/">Sup'Teaching.fr</a></h1>
 
-    <a href="#sidr" id="right-menu" class="mobile"><i class="fa fa-bars"></i></a>
+    <a href="#sidr" id="right-menu" class="mobile hamburger"></a>
 
     <!-- Standard menu -->
     <nav class="not-mobile"">
