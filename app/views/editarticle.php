@@ -12,6 +12,8 @@ $content = ArticleModel::getContent($this->pdo, $id);
         <?php echo('"' . $title . '"'); ?>
     </title>
     <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="stylesheet" href="/assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/jquery.sidr.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
